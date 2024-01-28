@@ -1,0 +1,35 @@
+body{
+    background-color: lightblue;
+    height: 600px;
+    height: 600px
+ }
+ 
+ .film-menu {
+     background-color:  grey;
+     position: absolute; 
+     height:600px;
+     width:300px;
+     left: 10%;
+     top: 14%;
+     
+ }
+ 
+ #filmInfo{
+     background-color: grey;
+     height: 600px;
+     width: 320px;
+     right: -40%;
+     position: relative;         
+   
+ }
+
+ label{
+     background-color: whitesmoke; 
+     width: 50%;
+     align-items:  center;
+ }
+
+ h1{
+ text-align: center;
+ }
+ 
