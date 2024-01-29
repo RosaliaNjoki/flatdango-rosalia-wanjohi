@@ -2,11 +2,14 @@ document.addEventListener("DOMContentLoaded", function(){
     // fetch the details of the first film
     fetchFilmDetails(1);
     //fetch the details of all films for the menu
-    fetchAllFilms()
+    fetchAllFilms();
+    // adding event listner for purchasing a ticket
+     document.getElementById("filmInfo").addEventListener('click', function(event) {
+        event.preventDefault();
+    
+        });
+     
     });
-    
-    
-    let availableTicket;
     
     function fetchFilmDetails(){
     //making a Get request to obtain first film details
@@ -18,22 +21,39 @@ document.addEventListener("DOMContentLoaded", function(){
      function displayFilmDetails(filmData){
         // displaying the first film details using HTML elements
         const capacity = `${filmData.capacity}`;
-        const ticketSold = `${filmData.tickets_sold}`;
+        ticketSold = `${filmData.tickets_sold}`;
         availableTickets = (capacity - ticketSold);
         const filmInfoElement = document.getElementById("filmInfo");
        //const availableTickets= Math.parseInt(filmData.capacity - filmData.ticket_sold);
         filmInfoElement.innerHTML = `
             <h2>${filmData.title}</h2>
             <img class= "thumb" height ="250px" width ="250px" src = "${filmData.poster}" alt = "${filmData.title}"><br>
-            <h4>${filmData.description}</h4><br>
-            <label align=center>Runtime: ${filmData.runtime}</label><br>
-            <label>Capacity: ${filmData.capacity}</label><br>
-            <label>Showtime: ${filmData.showtime}</label><br>
-            <label>Tickets Sold: ${filmData.tickets_sold}<label><br>
-            <label>Available Tickets:${availableTickets}</label><br>
-            <button type = "button">Buy Ticket</button> 
+            <h4>${filmData.description}</h4>
+            <p>Runtime: ${filmData.runtime}</p>
+            <p>Capacity: ${filmData.capacity}</p>
+            <p>Showtime: ${filmData.showtime}</p>
+            <p>Tickets Sold:<span id = "tickets-sold"> ${filmData.tickets_sold}</span><p>
+            <p>Available Tickets:<span id = "available-ticket">${availableTickets}</span></p>
             
-       `;
+              `;
+       //inserting a buy button and invoking the ticket buying event       
+       const button = document.createElement("button");
+       button.className = "buy-ticket";
+       button.textContent='Buy Ticket';
+       document.getElementById("filmInfo").append(button);
+       button.addEventListener("click", function(){
+        if(availableTickets===0){
+        
+            alert("We are Sold Out") ;
+    
+           }
+            else {
+               ticketSold++;
+               availableTickets--;
+               document.getElementById("tickets-sold").textContent = ticketSold;
+               document.getElementById("available-ticket").textContent = availableTickets;
+            }
+       } );
      }
     
      function fetchAllFilms(){
@@ -57,12 +77,4 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }    
     
-        function buyTicket(){
-            if (availableTicket ===0)
-            {
-               alert("We are Sold Out") ;
-            } else
-            availableTicket = availableTicket-1;
-        
     
-        }

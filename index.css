@@ -1,35 +1,34 @@
 body{
-    background-color: lightblue;
+    background-color:rgb(109, 101, 101);
     height: 600px;
     height: 600px
  }
- 
  .film-menu {
      background-color:  grey;
+     padding: 10px;
      position: absolute; 
-     height:600px;
-     width:300px;
-     left: 10%;
-     top: 14%;
-     
+     height:580px;
+     width:370px;
+     left: 20%;
+     top: 14%;  
  }
  
  #filmInfo{
      background-color: grey;
-     height: 600px;
-     width: 320px;
-     right: -40%;
-     position: relative;         
-   
- }
-
- label{
-     background-color: whitesmoke; 
-     width: 50%;
-     align-items:  center;
- }
-
+     padding: 8px;
+     height: 580px;
+     width: 370px;
+     right: -50%;
+     position: relative;  
+    }
+  button {
+     background-color: white;
+     margin: auto;
+  } 
  h1{
  text-align: center;
+ }
+ ul {
+     list-style-type: none;
  }
  
