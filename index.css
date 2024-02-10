@@ -4,7 +4,7 @@ body{
     height: 600px
  }
  .film-menu {
-     background-color:  grey;
+     background-color:  lightblue;
      padding: 10px;
      position: absolute; 
      height:580px;
@@ -14,7 +14,7 @@ body{
  }
  
  #filmInfo{
-     background-color: grey;
+     background-color: lightcyan;
      padding: 8px;
      height: 580px;
      width: 370px;
@@ -25,10 +25,14 @@ body{
      background-color: white;
      margin: auto;
   } 
+  .button-sold-out {
+    background-color: brown;
+    color: white;
+
+  }
  h1{
  text-align: center;
  }
  ul {
      list-style-type: none;
  }
- 
