@@ -5,7 +5,6 @@
     
   function filmMenuList(){
 
-        
   fetch("http://localhost:3000/films")
           .then((response) => {
             
@@ -13,7 +12,8 @@
           })
           .then((data) => {
             filmData = data;
-
+            
+            filmDetails (data[0].id);
                 //displaying films menu in the unique HTML element
                 for (let i = 0; i < filmData.length; i++){
                 const filmMenu = document.createElement("li");
@@ -25,13 +25,13 @@
             
               }    
          for (data of filmData){
-          // filmDetails(data);
+         
          }
                   });
         }
         filmMenuList();
        
-         function filmDetails(id){
+  function filmDetails(id){
 
         document.querySelector("#film-data").innerHTML = ``;
         
@@ -77,7 +77,7 @@
       updateTickets(ticketSold, id);
 
       }
-      }
+         }
 
       function updateTickets(ticketSold, id)
       {

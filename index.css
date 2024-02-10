@@ -5,9 +5,9 @@ body{
  }
  .film-menu {
      background-color:  lightblue;
-     padding: 10px;
+     padding: 8px;
      position: absolute; 
-     height:580px;
+     height:700px;
      width:370px;
      left: 20%;
      top: 14%;  
@@ -16,7 +16,7 @@ body{
  #filmInfo{
      background-color: lightcyan;
      padding: 8px;
-     height: 580px;
+     height: 700px;
      width: 370px;
      right: -50%;
      position: relative;  
